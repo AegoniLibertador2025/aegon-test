@@ -1,7 +1,6 @@
 
 from flask import Flask, request, jsonify
 import os
-import time
 
 app = Flask(__name__)
 
@@ -44,6 +43,3 @@ def crear_funcion():
         return jsonify({"estado": "ok", "mensaje": f"Función {ruta} creada."}), 200
     except Exception as e:
         return jsonify({"estado": "error", "detalle": str(e)}), 500
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
